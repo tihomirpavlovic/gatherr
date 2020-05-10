@@ -1,0 +1,77 @@
+//Breakpoints
+@desktop-l: "only screen and (min-width : 1920px)";
+@desktop-s: "only screen and (min-width : 1500px)";
+
+@laptop-xl: ~"only screen and (min-width : 1440px)";
+@laptop-l: ~"only screen and (min-width : 1366px)";
+@laptop-m: ~"only screen and (min-width : 1280px)";
+
+@tablet-xl: ~"only screen and (min-width : 1100px)";
+@tablet-l: ~"only screen and (min-width : 1024px)";
+@tablet-s: ~"only screen and (min-width : 768px)";
+@tablet-xs: ~"only screen and (min-width : 650px)";
+
+@mobile-xl: ~"only screen and (min-width : 550px)";
+@mobile-l: ~"only screen and (min-width : 450px)";
+@mobile-s: ~"only screen and (min-width : 390px)";
+@mobile-xs: ~"only screen and (min-width : 330px)";
+
+//Fonts
+@font1R: 'Questrial-Regular', sans-serif;
+
+@font2R: 'DMSans-Regular', sans-serif;
+@font2RI: 'DMSans-Italic', sans-serif;
+@font2M: 'DMSans-Medium', sans-serif;
+@font2MI: 'DMSans-MediumItalic', sans-serif;
+@font2B: 'DMSans-Bold', sans-serif;
+@font2BI: 'DMSans-BoldItalic', sans-serif;
+
+//Colors
+@color1: #95A9B1;
+
+.transition(@el: all, @speed: 400ms, @tf: ease, @delay: 0ms) {
+    -webkit-transition: @el @speed @tf @delay;
+    -moz-transition: @el @speed @tf @delay;
+    -o-transition: @el @speed @tf @delay;
+    transition: @el @speed @tf @delay;
+}
+
+.fade_in(@opacityStart: 0, @opacityEnd: 1, @speed: 1s) {
+    opacity: @opacityStart;
+    .transition(all, @speed);
+
+    &.in-view {
+        opacity: @opacityEnd;
+    }
+}
+
+.slide-up(@position: relative, @topStart:200px , @topEnd:0px ,@opacityStart: 0, @opacityEnd: 1, @speed: 1s) {
+    position: @position;
+    top: @topStart;
+    opacity: @opacityStart;
+    .transition(all, @speed);
+
+    &.in-view {
+        top: @topEnd;
+        opacity: @opacityEnd;
+    }
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+.heading_1 {
+    font-family: @font2B;
+    font-size: 45px;
+    line-height: 60px;
+}
+
+.paragraph_1 {
+    font-family: @font2R;
+    font-size: 17px;
+    line-height: 22px;
+}
+
+@import "fonts";
+@import "homepage";

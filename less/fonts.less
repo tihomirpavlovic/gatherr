@@ -1,0 +1,19 @@
+.include-custom-font(@family: arial, @weight: normal, @style: normal) {
+    @font-face {
+        font-family: @family;
+        src:url('../fonts/@{family}.eot');
+        src:url('../fonts/@{family}.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/@{family}.woff') format('woff'),
+        url('../fonts/@{family}.ttf') format('truetype'),
+        url('../fonts/@{family}.svg#icon') format('svg');
+        font-weight: @weight;
+        font-style: @style;
+    }
+}
+.include-custom-font('Questrial-Regular');
+.include-custom-font('DMSans-Regular');
+.include-custom-font('DMSans-Italic');
+.include-custom-font('DMSans-Medium');
+.include-custom-font('DMSans-MediumItalic');
+.include-custom-font('DMSans-Bold');
+.include-custom-font('DMSans-BoldItalic');
