@@ -45,7 +45,7 @@
     }
 }
 
-.slide-up(@position: relative, @topStart:200px , @topEnd:0px ,@opacityStart: 0, @opacityEnd: 1, @speed: 1s) {
+.slide_up(@position: relative, @topStart:200px , @topEnd:0px ,@opacityStart: 0, @opacityEnd: 1, @speed: 1s) {
     position: @position;
     top: @topStart;
     opacity: @opacityStart;
@@ -53,6 +53,18 @@
 
     &.in-view {
         top: @topEnd;
+        opacity: @opacityEnd;
+    }
+}
+
+.slide_left(@position: relative, @leftStart: -200px , @leftEnd:0px ,@opacityStart: 0, @opacityEnd: 1, @speed: 1s) {
+    position: @position;
+    left: @leftStart;
+    opacity: @opacityStart;
+    .transition(all, @speed);
+
+    &.in-view {
+        left: @leftEnd;
         opacity: @opacityEnd;
     }
 }

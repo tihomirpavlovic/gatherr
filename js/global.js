@@ -2,6 +2,23 @@
 
     $(document).ready(function () {
         fadeIn();
+
+        var openLightBox = $('.open_light_box');
+        var videoLightBox = $('.video_light_box');
+        var video1 = $('#video_1');
+        var closeLightBox = $('.close_light_box');
+
+        openLightBox.on('click', function(){
+            var videoSrc = $(this).data('video');
+            videoLightBox.fadeIn();
+            console.log(videoSrc);
+            video1.attr('src', videoSrc);
+        });
+
+        closeLightBox.on('click', function(){
+            videoLightBox.fadeOut();
+        });
+
     });
 
     $(window).on('resize', function () {
@@ -18,7 +35,7 @@
     function fadeIn() {
         var winHeight = $(window).height();
         var bodyScroll = $(document).scrollTop();
-        var calcHeight = bodyScroll + winHeight + 0;
+        var calcHeight = bodyScroll + winHeight + 100;
 
         $('.fadein-wrap').each(function (index, el) {
             if ($(this).offset().top < calcHeight && $(this).offset().top + $(this).height() > bodyScroll) {
