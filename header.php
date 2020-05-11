@@ -13,14 +13,18 @@
 <div id="page" class="site">
 
 	<header>
-		<nav>
-			<?php
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'menu-1',
-                        'menu_id'        => 'primary-menu',
-                    )
-                );
-			?>
-		</nav>
+        <div class="group">
+            <p>Product benefits</p>
+            <a class="button" href=""><span>The sounds like</span></a>
+        </div>
+<!--		<nav>-->
+<!--			--><?php
+//                wp_nav_menu(
+//                    array(
+//                        'theme_location' => 'menu-1',
+//                        'menu_id'        => 'primary-menu',
+//                    )
+//                );
+//			?>
+<!--		</nav>-->
 	</header>

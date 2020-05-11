@@ -35,7 +35,7 @@
     function fadeIn() {
         var winHeight = $(window).height();
         var bodyScroll = $(document).scrollTop();
-        var calcHeight = bodyScroll + winHeight + 100;
+        var calcHeight = bodyScroll + winHeight + 0;
 
         $('.fadein-wrap').each(function (index, el) {
             if ($(this).offset().top < calcHeight && $(this).offset().top + $(this).height() > bodyScroll) {

@@ -36,20 +36,20 @@
     transition: @el @speed @tf @delay;
 }
 
-.fade_in(@opacityStart: 0, @opacityEnd: 1, @speed: 1s) {
+.fade_in(@opacityStart: 0, @opacityEnd: 1, @speed: 1s, @delay: 0s) {
     opacity: @opacityStart;
-    .transition(all, @speed);
+    .transition(all, @speed, ease, @delay);
 
     &.in-view {
         opacity: @opacityEnd;
     }
 }
 
-.slide_up(@position: relative, @topStart:200px , @topEnd:0px ,@opacityStart: 0, @opacityEnd: 1, @speed: 1s) {
+.slide_up(@position: relative, @topStart:200px , @topEnd:0px ,@opacityStart: 0, @opacityEnd: 1, @speed: 1s, @delay: 0s) {
     position: @position;
     top: @topStart;
     opacity: @opacityStart;
-    .transition(all, @speed);
+    .transition(all, @speed, ease, @delay);
 
     &.in-view {
         top: @topEnd;
@@ -57,14 +57,26 @@
     }
 }
 
-.slide_left(@position: relative, @leftStart: -200px , @leftEnd:0px ,@opacityStart: 0, @opacityEnd: 1, @speed: 1s) {
+.slide_left(@position: relative, @leftStart: -200px , @leftEnd:0px ,@opacityStart: 0, @opacityEnd: 1, @speed: 1s, @delay: 0s) {
     position: @position;
     left: @leftStart;
+    opacity: @opacityStart;
+    .transition(all, @speed, ease, @delay);
+
+    &.in-view {
+        left: @leftEnd;
+        opacity: @opacityEnd;
+    }
+}
+
+.slide_right(@position: relative, @rightStart: -200px , @rightEnd:0px ,@opacityStart: 0, @opacityEnd: 1, @speed: 1s) {
+    position: @position;
+    right: @rightStart;
     opacity: @opacityStart;
     .transition(all, @speed);
 
     &.in-view {
-        left: @leftEnd;
+        right: @rightEnd;
         opacity: @opacityEnd;
     }
 }
@@ -75,15 +87,45 @@ body {
 
 .heading_1 {
     font-family: @font2B;
-    font-size: 45px;
-    line-height: 60px;
+    font-size: 30px;
+    line-height: 40px;
+
+    @media @tablet-xl {
+        font-size: 45px;
+        line-height: 60px;
+    }
+
+    @media @laptop-xl {
+        font-size: 65px;
+        line-height: 80px;
+    }
 }
 
 .paragraph_1 {
     font-family: @font2R;
-    font-size: 17px;
-    line-height: 22px;
+    font-size: 14px;
+    line-height: 19px;
+
+    @media @tablet-xl {
+        font-size: 17px;
+        line-height: 22px;
+    }
+
+    @media @laptop-xl {
+        font-size: 37px;
+        line-height: 42px;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
 }
 
 @import "fonts";
 @import "homepage";
+@import "header";
