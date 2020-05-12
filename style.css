@@ -1,0 +1,17 @@
+/*!
+Theme Name: gatherr
+Theme URI: NA
+Author: NA
+Author URI: NA
+Description: Description
+Version: 1.0.0
+License: NA
+License URI: NA
+Text Domain: gatherr
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+@import "less/reset.css";
+@import "less/swipermin.css";
+@import "less/animate.min.css";
+@import "less/global.css";

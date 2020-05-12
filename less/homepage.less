@@ -864,18 +864,48 @@
 
     .table_section{
         display: flex;
-        max-width: 83%;
-        padding-left: 20px;
-        padding-right: 20px;
+        flex-wrap: wrap;
+        max-width: 100%;
+        max-width: 100%;
         box-sizing: border-box;
         margin: auto;
         width: 100%;
-        margin-bottom: 200px;
+        margin-bottom: 90px;
         margin-top: 200px;
 
+        @media @tablet-s {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 200px;
+        }
+
+        @media @tablet-xl {
+            max-width: 83%;
+        }
+
         .left{
-            width: 50%;
-            padding-right: 120px;
+            width: 100%;
+            padding-left: 40px;
+            padding-right: 40px;
+            order: 2;
+            box-sizing: border-box;
+
+            &:after{
+                content: '';
+                display: block;
+                width: 52px;
+                height: 1px;
+                background-color: #D8D8D8;
+                margin: auto;
+                margin-top: 80px;
+            }
+
+            @media @tablet-l {
+                max-width: 50%;
+                padding-right: 120px;
+                padding-left: 0px;
+                order: 1;
+            }
 
             h2{
                 .heading_1();
@@ -895,11 +925,40 @@
         }
 
         .right{
-            width: 50%;
+            width: 100%;
             position: relative;
+            padding-left: 10px;
+            padding-right: 10px;
+            order: 1;
+            margin-bottom: 100px;
+            box-sizing: border-box;
+
+            &:after{
+                content: '';
+                display: block;
+                width: 1px;
+                height: 52px;
+                background-color: #D8D8D8;
+                margin: auto;
+                margin-top: 80px;
+            }
+
+            @media @tablet-l {
+                max-width: 50%;
+                order: 2;
+                padding: 0px;
+
+                &:after{
+                    display: none;
+                }
+            }
 
             table{
                 width: 100%;
+
+                @media @tablet-xl {
+                    max-width: 520px;
+                }
 
                 tr{
                     .fade_in();
@@ -965,11 +1024,15 @@
                                 text-align: left;
                                 font-family: @font2B;
                                 line-height: 40px;
-                                font-size: 45px!important;
+                                font-size: 40px!important;
                                 color: #FFAAAA;
                                 position: absolute;
                                 left: 15%;
                                 //padding-top: 0px;
+
+                                @media @tablet-s{
+                                    font-size: 45px!important;
+                                }
                             }
                         }
                     }
@@ -1000,6 +1063,12 @@
             text-align: center;
             font-size: 60px;
             line-height: 1em;
+            letter-spacing: -2px;
+            padding: 0 30px;
+
+            @media @tablet-s{
+                padding: 0 20px;
+            }
         }
 
         .swiper_buttons_holder{
@@ -1096,9 +1165,17 @@
     }
 
     .timeline_section{
-        width: 40%;
+        width: 80%;
         margin: 0 auto 100px auto;
         position: relative;
+
+        @media @tablet-s{
+            width: 60%;
+        }
+
+        @media @tablet-l{
+            width: 40%;
+        }
 
         #timeline_pattern {
             max-width: 230px;
@@ -1111,42 +1188,89 @@
         h2{
             .heading_1();
             font-size: 30px;
-            text-align: center;
-            padding: 0 20px;
+            text-align: left;
+            padding: 0 0px;
             box-sizing: border-box;
             color: #763C79;
+
+            @media @tablet-s{
+                text-align: center;
+                padding: 0 20px;
+            }
         }
 
         .timeline_holder{
-            height: 2px;
+            height: auto;
             position: relative;
             margin-top: 50px;
             margin-bottom: 50px;
             display: flex;
+            flex-wrap: wrap;
+
+            @media @tablet-s{
+                height: 2px;
+            }
 
             .left, .right{
-                background-color: #fef3ff;
-                width: 50%;
+                width: 100%;
+                height: 100px;
+                background-color: transparent;
+                border-left: 1px solid #fef3ff;
+
+                @media @tablet-s{
+                    background-color: #fef3ff;
+                    width: 50%;
+                    height: auto;
+                }
 
                 &.active{
-                    background-color: #763C79;
+                    border-left: 1px solid #763C79;
+                    
+                    @media @tablet-s{
+                        border-left: none;
+                        background-color: #763C79;
+                    }
                 }
             }
 
             .left{
+                position: relative;
+
+                @media @tablet-s{
+                    position: initial;
+                }
+
                 .timeline_spot{
-                    left: -13%;
+                    left: 0;
+
+                    @media @tablet-s{
+                        left: -13%;
+                    }
 
                     &.middle{
-                        left: 50%;
-                        transform: translateX(-50%);
+                        left: 0%;
+                        bottom: 0;
+
+                        @media @tablet-s{
+                            bottom: auto;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                        
                     }
                 }
             }
 
             .right{
                 .timeline_spot{
-                    right: -3%;
+                    left: 0px;
+                    bottom: 0px;
+
+                     @media @tablet-s{
+                         right: -3%;
+                         left: auto;
+                         bottom: auto;
+                    }
                 }
             }
 
@@ -1168,19 +1292,31 @@
                     border: 2px solid #fff;
                     border-radius: 100px;
                     position: absolute;
-                    left: 50%;
-                    top: -13px;
+                    left: 0%;
+                    top: -5px;
                     transform: translateX(-50%);
+
+                    @media @tablet-s{
+                        left: 50%;
+                        top: -13px;
+                    }
                 }
 
                 p {
                     display: inline-block;
-                    margin-top: 20px;
+                    margin-top: 0px;
+                    margin-left: 40px;
                     font-family: @font1R;
                     line-height: 14px;
                     font-size: 14px;
                     transform: rotateY(90deg);
+                    position: relative;
                     .transition(all,500ms,ease,700ms);
+
+                    @media @tablet-s{
+                        margin-top: 20px;
+                        margin-left: 0px;
+                    }
 
                     &.in-view {
                         transform: rotateY(0deg);
@@ -1197,15 +1333,28 @@
             margin: auto;
             padding-top: 80px;
             padding-bottom: 80px;
-            max-width: 45%;
+            padding-left: 40px;
+            padding-right: 40px;
+            max-width: 100%;
+
+            @media @tablet-l{
+                width: 60%;
+                padding-left: 0px;
+                padding-right: 0px;
+            }
 
             h2{
                 .heading_1();
                 text-align: center;
                 color: #763C79;
-                font-size: 60px;
+                font-size: 55px;
                 line-height: 1em;
+                letter-spacing: -1.2px;
                 .slide_up(@position: relative, @topStart:100px , @topEnd:0px ,@opacityStart: 0, @opacityEnd: 1, @speed: 1s, @delay: 0s);
+
+                @media @tablet-s{
+                    font-size: 60px;
+                }
             }
 
             p{
