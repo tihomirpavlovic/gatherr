@@ -40,18 +40,21 @@
         </div>
 
         <div class="step_section step_1_section fadein-wrap">
-            <img id="pattern" src="<?php echo get_template_directory_uri(); ?>/images/step_1_pattern.png" alt="">
+<!--            <img id="pattern" src="--><?php //echo get_template_directory_uri(); ?><!--/images/step_1_pattern.png" alt="">-->
             <div class="left">
                 <div class="image_holder fadein-wrap">
-                    <img  data-parallax-distance="<?php if(my_wp_is_mobile()): echo -$parallax_m; else: echo -$parallax_d; endif; ?>" src="<?php echo get_template_directory_uri(); ?>/images/demo-ipad-1-desktop.png" alt="">
+                    <img class="desktop" data-parallax-distance="<?php echo -$parallax_d; ?>" src="<?php echo get_template_directory_uri(); ?>/images/demo-ipad-1-desktop.png" alt="">
+                    <img class="mobile" data-parallax-distance="<?php  echo -$parallax_m; ?>" src="<?php echo get_template_directory_uri(); ?>/images/demo-ipad-1-mobile.png" alt="">
                 </div>
             </div>
-            <div class="right">
+            <div class="middle">
                 <div class="description">
                     <div class="step_icon fadein-wrap"><span>1</span></div>
                     <h2 class="fadein-wrap textillate">Start by designing your dream shop.</h2>
                     <h3 class="fadein-wrap">Choose from a wide choice of templates to help you really get creative.</h3>
                 </div>
+            </div>
+            <div class="right">
                 <div class="image fadein-wrap">
                     <img data-parallax-distance="<?php if(my_wp_is_mobile()): echo $parallax_m; else: echo $parallax_d; endif; ?>" src="<?php echo get_template_directory_uri(); ?>/images/demo-iphone-1.png" alt="">
                 </div>
