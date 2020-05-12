@@ -1,6 +1,6 @@
 //Breakpoints
-@desktop-l: "only screen and (min-width : 1920px)";
-@desktop-s: "only screen and (min-width : 1500px)";
+@desktop-l: ~"only screen and (min-width : 1920px)";
+@desktop-s: ~"only screen and (min-width : 1500px)";
 
 @laptop-xl: ~"only screen and (min-width : 1440px)";
 @laptop-l: ~"only screen and (min-width : 1366px)";
@@ -87,15 +87,15 @@ body {
 
 .heading_1 {
     font-family: @font2B;
-    font-size: 30px;
-    line-height: 40px;
+    font-size: 36px;
+    line-height: 43px;
 
-    @media @tablet-xl {
+    @media @tablet-s {
         font-size: 45px;
         line-height: 60px;
     }
 
-    @media @laptop-xl {
+    @media @desktop-s {
         font-size: 65px;
         line-height: 80px;
     }
@@ -103,16 +103,16 @@ body {
 
 .paragraph_1 {
     font-family: @font2R;
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 20px;
+    line-height: 26px;
 
-    @media @tablet-xl {
-        font-size: 17px;
-        line-height: 22px;
+    @media @tablet-s {
+        font-size: 20px;
+        line-height: 26px;
     }
 
-    @media @laptop-xl {
-        font-size: 37px;
+    @media @desktop-s {
+        font-size: 24px;
         line-height: 42px;
     }
 }

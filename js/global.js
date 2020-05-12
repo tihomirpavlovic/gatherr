@@ -3,6 +3,14 @@
     $(document).ready(function () {
         fadeIn();
 
+        if ($('.timeline_spot.middle').hasClass('active')){
+            $('.timeline_holder .left').addClass('active');
+        }
+
+        if ($('.timeline_holder .right .timeline_spot').hasClass('active')){
+            $('.timeline_holder .right').addClass('active');
+        }
+
         var openLightBox = $('.open_light_box');
         var videoLightBox = $('.video_light_box');
         var video1 = $('#video_1');
@@ -17,6 +25,31 @@
 
         closeLightBox.on('click', function(){
             videoLightBox.fadeOut();
+        });
+
+        $('.button').on('click', function() {
+            $('.form_holder').fadeIn(100);
+
+            setTimeout(function(){
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#test").offset().top
+                }, 2000);
+            }, 200)
+        });
+
+        var swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            slidesPerView: 5,
+            spaceBetween: 70,
+            // centeredSlides: true,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
         });
 
     });

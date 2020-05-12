@@ -14,8 +14,11 @@
 
 	<header>
         <div class="group">
-            <p>Product benefits</p>
-            <a class="button" href=""><span>The sounds like</span></a>
+            <div class="logo"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt=""></div>
+            <a class="button" href="#contact_form_section">
+                <span class="desktop">The sounds like something I'd use</span>
+                <span class="mobile">Yes, I'd use this</span>
+            </a>
         </div>
 <!--		<nav>-->
 <!--			--><?php

@@ -2,14 +2,37 @@ header {
     .group {
         display: flex;
         justify-content: space-between;
+        max-width: 80%;
+        align-items: center;
+        margin: auto;
+        margin-top: 30px;
+
+        .logo {
+
+        }
 
         .button {
             background-color: #85B4A6;
             border-radius: 5px;
             padding: 20px 30px;
+
             span {
                 color: #fff;
                 font-family: @font2R;
+
+                &.desktop {
+                    display: none;
+
+                    @media @tablet-s {
+                        display: block;
+                    }
+                }
+
+                &.mobile {
+                    @media @tablet-s {
+                        display: none;
+                    }
+                }
             }
         }
     }
