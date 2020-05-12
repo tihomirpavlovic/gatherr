@@ -50,6 +50,21 @@
                 el: '.swiper-pagination',
                 clickable: true,
             },
+            breakpoints: {
+                
+                300: {
+                  slidesPerView: 3,
+                  spaceBetween: 10
+                }, 
+                680: {
+                  slidesPerView: 4,
+                  spaceBetween: 30
+                },
+                1100: {
+                  slidesPerView: 5,
+                  spaceBetween: 70,
+                }
+              }
         });
 
     });
