@@ -40,7 +40,7 @@
         </div>
 
         <div class="step_section step_1_section fadein-wrap">
-<!--            <img id="pattern" src="--><?php //echo get_template_directory_uri(); ?><!--/images/step_1_pattern.png" alt="">-->
+            <img class="illustration_icon_1" src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-02.svg">
             <div class="left">
                 <div class="image_holder fadein-wrap">
                     <img class="desktop" data-parallax-distance="<?php echo -$parallax_d; ?>" src="<?php echo get_template_directory_uri(); ?>/images/demo-ipad-1-desktop.png" alt="">
@@ -55,7 +55,9 @@
                 </div>
             </div>
             <div class="right">
+
                 <div class="image fadein-wrap">
+                    <img class="illustration_icon_2" src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-01.svg">
                     <img data-parallax-distance="<?php if(my_wp_is_mobile()): echo $parallax_m; else: echo $parallax_d; endif; ?>" src="<?php echo get_template_directory_uri(); ?>/images/demo-iphone-1.png" alt="">
                 </div>
             </div>
@@ -64,7 +66,11 @@
 
         <div class="step_section step_2_section">
             <div class="left">
-                <div class="step_icon fadein-wrap"><span>2</span></div>
+                <img class="illustration_icon" src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-01.svg">
+
+                <div class="step_icon fadein-wrap">
+                    <span>2</span>
+                </div>
                 <h2 class="fadein-wrap textillate">After that, invite sellers to upload their products.</h2>
                 <p class="fadein-wrap">Just copy-and-paste your store link, and send it direct to brand partners.</p>
             </div>
@@ -76,7 +82,8 @@
         </div>
 
         <div class="step_section step_3_section fadein-wrap">
-<!--            <img id="pattern" src="--><?php //echo get_template_directory_uri(); ?><!--/images/step_3_pattern.png" alt="">-->
+            <img class="illustration_icon_1" src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-03.svg">
+
             <div class="description mobile">
                 <div class="step_icon fadein-wrap"><span>3</span></div>
                 <h2 class="fadein-wrap textillate">Then, choose which ones you want to go on your store.</h2>
@@ -94,11 +101,13 @@
                 </div>
 
                 <div class="image_holder hand fadein-wrap">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/hand_overlay.png" alt="">
+                    <img data-parallax-distance="<?php if(my_wp_is_mobile()): echo -$parallax_m; else: echo -$parallax_d; endif; ?>" src="<?php echo get_template_directory_uri(); ?>/images/hand_overlay.png" alt="">
                 </div>
             </div>
             <div class="right">
                 <div class="description desktop">
+                    <img class="illustration_icon_2" src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-04.svg">
+
                     <div class="step_icon fadein-wrap"><span>3</span></div>
                     <h2 class="fadein-wrap textillate">Then, choose which ones you want to go on your store.</h2>
                 </div>
@@ -129,6 +138,8 @@
         <div class="step_section step_4_section">
             <div class="top">
                 <div class="left">
+                    <img class="illustration_icon_1" src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-05.svg">
+
                     <div class="step_icon fadein-wrap"><span>4</span></div>
                     <h2 class="fadein-wrap">
                         Promote it on your profile, and <br>
@@ -138,7 +149,8 @@
                 </div>
                 <div class="right">
                     <div class="image_holder fadein-wrap">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/step_4_image.jpg" alt="">
+<!--                        <img src="--><?php //echo get_template_directory_uri(); ?><!--/images/step_4_image.jpg" alt="">-->
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-09.svg" alt="">
                     </div>
                 </div>
             </div>
