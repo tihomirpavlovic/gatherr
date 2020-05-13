@@ -32,7 +32,7 @@
 
             setTimeout(function(){
                 $([document.documentElement, document.body]).animate({
-                    scrollTop: $("#test").offset().top
+                    scrollTop: $("#contact_form").offset().top
                 }, 2000);
             }, 200)
         });

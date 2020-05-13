@@ -35,5 +35,55 @@ header {
                 }
             }
         }
+
+        .button{
+            cursor: pointer;
+            border: 1px solid #85B4A6;
+            font-size: 13px;
+            font-family: @font2R;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 30px;
+            box-sizing: border-box;
+            color: #FFAAAA;
+            background-color: #85B4A6;
+            border-radius: 5px;
+            .transition();
+            .slide_up(@position: relative, @topStart:100px , @topEnd:0px ,@opacityStart: 0, @opacityEnd: 1, @speed: 1s, @delay: 0s);
+
+             span {
+                color: #fff;
+                font-family: @font2R;
+
+                &.desktop {
+                    display: none;
+
+                    @media @tablet-s {
+                        display: block;
+                    }
+                }
+
+                &.mobile {
+                    @media @tablet-s {
+                        display: none;
+                    }
+                }
+            }
+
+            img{
+                width: 15px;
+                padding-left: 15px;
+                position: relative;
+                right: 0px;
+                .transition();
+            }
+
+            &:hover{
+                img{
+                    right: -5px;
+                }
+            }
+        }
     }
 }
