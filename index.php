@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="image_holder screen_2 fadein-wrap">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/step_3_image_2.png" alt="">
+                    <img id="screen_2_image" src="<?php echo get_template_directory_uri(); ?>/images/step_3_image_2.png" alt="">
                 </div>
 
                 <div class="image_holder hand fadein-wrap">
@@ -112,20 +112,20 @@
                     <h2 class="fadein-wrap textillate">Then, choose which ones you want to go on your store.</h2>
                 </div>
 
-                <ul class="fadein-wrap">
-                    <li>
+                <ul class="list">
+                    <li class="fadein-wrap" data-image="<?php echo get_template_directory_uri(); ?>/images/step_3_image_2.png">
                         <div class="icon">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/step_3_icon_2.svg" alt="">
                         </div>
                         <h3>Products you swear by and know your audience will love.</h3>
                     </li>
-                    <li>
+                    <li class="fadein-wrap" data-image="<?php echo get_template_directory_uri(); ?>/images/step_3_image_2.png">
                         <div class="icon">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/step_3_icon_2.svg" alt="">
                         </div>
                         <h3>Do-good products deserving of an extra push.</h3>
                     </li>
-                    <li>
+                    <li class="fadein-wrap" data-image="<?php echo get_template_directory_uri(); ?>/images/step_3_image_2.png">
                         <div class="icon">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/step_3_icon_3.svg" alt="">
                         </div>
@@ -154,15 +154,10 @@
                     </div>
                 </div>
             </div>
-            <div class="gallery">
+            <div class="gallery fadein-wrap">
                 <div class="gallery_wrap desktop">
 
-                    <div class="illustration_icon">
-                        <img  src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-01.svg">
-                    </div>
-
                     <div class="single_column">
-                        
                         <img src="<?php echo get_template_directory_uri(); ?>/images/twitter.jpg">
                     </div>
                     <div class="single_column">
@@ -191,29 +186,29 @@
 
                 <div class="gallery_wrap mobile">
 
-                    <div class="illustration_icon">
-                        <img  src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-01.svg">
-                    </div>
+<!--                    <div class="illustration_icon">-->
+<!--                        <img  src="--><?php //echo get_template_directory_uri(); ?><!--/images/Gatherr_Illustrations-01.svg">-->
+<!--                    </div>-->
 
                     <div class="single_column">
                         
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/twitter.jpg">
+                    </div>
+                    <div class="single_column">
+                        
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/pinterest.jpg">
+                    </div>
+                    <div class="single_column">
+                        
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/youtube.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/screen1.jpg">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/screen1.jpg">
                     </div>
                     <div class="single_column">
                         
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/screen1.jpg">
-                    </div>
-                    <div class="single_column">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/screen1.jpg">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/screen1.jpg">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/screen1.jpg">
-                    </div>
-                    <div class="single_column">
-                        
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/screen1.jpg">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/screen1.jpg">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/screen1.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/tik-tok.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/lastscreen.jpg">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/lastscreen2.jpg">
                     </div>
                     
                 </div>
@@ -227,6 +222,7 @@
                 </div>
             </div>
             <div class="right">
+                <img class="illustration_icon" src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-01.svg">
                 <div class="step_icon fadein-wrap"><span>5</span></div>
                 <h2 class="fadein-wrap textillate">When there’s an order, your sellers handle the rest!</h2>
                 <h3 class="fadein-wrap">We get it, you’re busy. So let’s leave it to the experts.</h3>
@@ -234,9 +230,7 @@
         </div>
 
         <div class="table_section">
-            <div class="illustration_icon">
-                <img  src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-07.svg">
-            </div>
+                <img class="illustration_icon"  src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-07.svg">
             <div class="left">
                 <h2>
                     <span>Yes, that’s right.</span>
@@ -359,14 +353,10 @@
         </div>
 
         <div class="timeline_section_wrap">
-
-            <div class="illustration_icon">
-                <img  src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-05.svg">
-            </div>
-
             <div class="timeline_section">
                 
-                <img id="illustration_icon" src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-08.svg" alt="">
+                <img class="illustration_icon" src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-08.svg" alt="">
+
                 <h2 class="fadein-wrap textillate">Timeline</h2>
 
                 <div class="timeline_holder">
@@ -395,6 +385,7 @@
         </div>
 
         <div class="form_section">
+            <img class="illustration_icon" src="<?php echo get_template_directory_uri(); ?>/images/Gatherr_Illustrations-05.svg">
             <div class="form_content">
                 <h2 class="fadein-wrap">Sounds <br>interesting, right?</h2>
                 <p class="fadein-wrap">

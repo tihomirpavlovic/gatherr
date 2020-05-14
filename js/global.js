@@ -11,6 +11,16 @@
             $('.timeline_holder .right').addClass('active');
         }
 
+        $('.step_3_section .list li').on('click', function(){
+            var image = $(this).data('image');
+            $('.step_3_section .list li').removeClass('active');
+            $(this).addClass('active');
+
+            $('#screen_2_image').fadeOut(function(){
+                $('#screen_2_image').attr('src',image).fadeIn();
+            })
+        });
+
         var openLightBox = $('.open_light_box');
         var videoLightBox = $('.video_light_box');
         var video1 = $('#video_1');
