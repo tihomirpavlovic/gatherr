@@ -1,4 +1,16 @@
 header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 120px;
+    left: 0;
+    z-index: 100;
+    display: none;
+    background: rgb(255,255,255);
+    background: -webkit-linear-gradient(rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+
     .group {
         display: flex;
         justify-content: space-between;
@@ -8,80 +20,94 @@ header {
         margin-top: 30px;
 
         .logo {
-
-        }
-
-        .button {
-            background-color: #85B4A6;
-            border-radius: 5px;
-            padding: 20px 30px;
-
-            span {
-                color: #fff;
-                font-family: @font2R;
-
-                &.desktop {
-                    display: none;
-
-                    @media @tablet-s {
-                        display: block;
-                    }
-                }
-
-                &.mobile {
-                    @media @tablet-s {
-                        display: none;
-                    }
-                }
-            }
-        }
-
-        .button{
-            cursor: pointer;
-            border: 1px solid #85B4A6;
-            font-size: 13px;
-            font-family: @font2R;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px 30px;
-            box-sizing: border-box;
-            color: #FFAAAA;
-            background-color: #85B4A6;
-            border-radius: 5px;
-            .transition();
-            .slide_up(@position: relative, @topStart:100px , @topEnd:0px ,@opacityStart: 0, @opacityEnd: 1, @speed: 1s, @delay: 0s);
-
-             span {
-                color: #fff;
-                font-family: @font2R;
-
-                &.desktop {
-                    display: none;
-
-                    @media @tablet-s {
-                        display: block;
-                    }
-                }
-
-                &.mobile {
-                    @media @tablet-s {
-                        display: none;
-                    }
-                }
-            }
-
+            max-width: 90px;
+            
             img{
-                width: 15px;
-                padding-left: 15px;
-                position: relative;
-                right: 0px;
-                .transition();
+                width: 100%;
             }
+        }
 
-            &:hover{
-                img{
-                    right: -5px;
+        .button_group {
+            display: flex;
+
+            .button {
+                cursor: pointer;
+                background-color: #85B4A6;
+                border-radius: 5px;
+                padding: 20px 30px;
+                box-sizing: border-box;
+                border: 1px solid #85B4A6;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #FFAAAA;
+                .transition();
+
+                &.shop_btn {
+                    background-color: #fff;
+                    border: solid 1px #000;
+                    margin-right: 10px;
+                    display: none;
+
+                    @media @tablet-s {
+                        display: block;
+                    }
+
+                    span {
+                        color: #000;
+                    }
+
+                    img {
+                        width: 15px;
+                        padding-left: 0;
+                        padding-right: 15px;
+                        position: relative;
+                        top: 2px;
+                    }
+
+                    &:hover {
+                        opacity: 0.6;
+
+                        img {
+                            right: 0;
+                        }
+                    }
+                }
+
+                span {
+                    color: #fff;
+                    font-family: @font2R;
+                    font-size: 13px;
+
+                    &.desktop {
+                        display: none;
+
+                        @media @tablet-s {
+                            display: block;
+                        }
+                    }
+
+                    &.mobile {
+                        @media @tablet-s {
+                            display: none;
+                        }
+                    }
+                }
+
+                img {
+                    width: 15px;
+                    padding-left: 15px;
+                    position: relative;
+                    right: 0;
+                    .transition();
+                }
+
+                &:hover {
+                    opacity: 0.6;
+
+                    img {
+                        right: -5px;
+                    }
                 }
             }
         }

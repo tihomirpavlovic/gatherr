@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="159px" height="160px" viewBox="0 0 159 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="50.8215486" cy="50.8215486" r="50.8215486"></circle>
+        <filter x="-44.3%" y="-44.3%" width="188.5%" height="188.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.117897727 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="GatherrLanding2" transform="translate(-360.000000, -6992.000000)">
+            <g id="Group-3" transform="translate(389.000000, 7021.000000)">
+                <g id="Oval">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <image id="icons8-disconnected" x="25" y="26" width="52" height="52" xlink:href="data:image/png;base64,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"></image>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -83,37 +83,41 @@
 
 body {
     -webkit-font-smoothing: antialiased;
+
+    color: #0C0C0C;
+
+    &.no_scroll{
+        overflow: hidden;
+    }
 }
 
 .heading_1 {
     font-family: @font2B;
     font-size: 36px;
-    line-height: 43px;
+    color: #0C0C0C;
+    .fade_in();
+    line-height: 1.3em;
 
     @media @tablet-s {
         font-size: 45px;
-        line-height: 60px;
     }
 
-    @media @desktop-s {
-        font-size: 65px;
-        line-height: 80px;
+    @media @laptop-m {
+        font-size: 45px;
     }
 }
 
 .paragraph_1 {
     font-family: @font2R;
     font-size: 20px;
-    line-height: 26px;
+    line-height: 1.4em;
 
     @media @tablet-s {
         font-size: 20px;
-        line-height: 26px;
     }
 
     @media @desktop-s {
         font-size: 24px;
-        line-height: 42px;
     }
 }
 

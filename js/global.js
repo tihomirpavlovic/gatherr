@@ -1,7 +1,67 @@
 (function ($) {
 
     $(document).ready(function () {
+
+
+        var wpcf7Elm = document.querySelector( '.wpcf7' );
+        wpcf7Elm.addEventListener( 'wpcf7mailsent', function( event ) {
+            $('.popup.active').css('display','none');
+            $('.popup.sucess').css('display','block');
+
+        }, false );
+
+
+        $('.popup.sucess .button_holder a').on('click', function(e) {
+            e.preventDefault();
+
+            $('.popup.sucess').css('display','none');
+            $('.popup.typeform').css('display','block');
+
+            var clicked = $(this).data('class');
+
+            if (clicked == "start-influencer") {
+                $('.form-influencer').css('display','block');
+            } else if (clicked == "start-agency") {
+                $('.form-agency').css('display','block');
+            } else {
+                $('.form-brand').css('display','block');
+            }
+            
+        });
+
+
+        $('.priority-access-off').on('click', function(e) {
+            e.preventDefault();
+            $('.popup.sucess').css('display','none');
+            location.reload();
+           
+        });
+
+
+        $('.popup.typeform .close-button').on('click', function() {
+            $('.popup.typeform').css('display','none');
+            location.reload();
+        });
+
+
         fadeIn();
+
+        $('.popup_btn').on('click', function(){
+            $('.popup_holder').fadeIn().css('display', 'flex');
+            $('body').addClass('no_scroll');
+        });
+
+        $('.start-singup').on('click', function(e){
+            e.preventDefault();
+            $('.popup_holder').fadeIn().css('display', 'flex');
+            $('body').addClass('no_scroll');
+        });
+
+        $('.close-button').on('click', function(){
+            $('.popup_holder').fadeOut();
+            $('body').removeClass('no_scroll');
+        })
+
 
         if ($('.timeline_spot.middle').hasClass('active')){
             $('.timeline_holder .left').addClass('active');
@@ -11,15 +71,43 @@
             $('.timeline_holder .right').addClass('active');
         }
 
+        var list_length =  $('.step_3_section .list li').length - 1;
+        var startIndex = 0;
+
+        function timeOutFunction() {
+            timeoutHandle = window.setTimeout(function(){
+                ( startIndex === list_length ) ? startIndex = 0 : startIndex++;
+                $('.step_3_section .list li').eq(startIndex).trigger('click');
+            },7000);
+        }
+
+        timeOutFunction();
+
         $('.step_3_section .list li').on('click', function(){
+            window.clearTimeout(timeoutHandle);
+
             var image = $(this).data('image');
             $('.step_3_section .list li').removeClass('active');
             $(this).addClass('active');
 
+            $('.step_3_section .list li').each(function(i, obj) {
+                var icon_image = $(this).data('icon');
+                $(this).find('img').attr('src',icon_image);
+            });
+
+            var icon_active_image = $(this).data('icona');
+            $(this).find('img').attr('src',icon_active_image);
+
+            startIndex = $(this).index();
+
             $('#screen_2_image').fadeOut(function(){
-                $('#screen_2_image').attr('src',image).fadeIn();
+                $('#screen_2_image').attr('src',image).fadeIn(function(){
+                    timeOutFunction();
+                });
             })
         });
+
+        $('.step_3_section .list li').eq(0).addClass('active');
 
         var openLightBox = $('.open_light_box');
         var videoLightBox = $('.video_light_box');
@@ -29,46 +117,37 @@
         openLightBox.on('click', function(){
             var videoSrc = $(this).data('video');
             videoLightBox.fadeIn();
-            console.log(videoSrc);
+           // console.log(videoSrc);
             video1.attr('src', videoSrc);
         });
 
         closeLightBox.on('click', function(){
             videoLightBox.fadeOut();
+            video1.attr('src', '');
         });
 
-        $('.button').on('click', function() {
-            $('.form_holder').fadeIn(100);
-
-            setTimeout(function(){
-                $([document.documentElement, document.body]).animate({
-                    scrollTop: $("#contact_form").offset().top
-                }, 2000);
-            }, 200)
-        });
-
-        var swiper = new Swiper('.swiper-container', {
+        var swiper = new Swiper('.creators', {
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
-            slidesPerView: 5,
-            spaceBetween: 70,
-            // centeredSlides: true,
+
             loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
+            // pagination: {
+            //     el: '.swiper-pagination',
+            //     clickable: true,
+            // },
             breakpoints: {
-                
+
                 300: {
-                  slidesPerView: 3,
-                  spaceBetween: 10
-                }, 
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                },
                 680: {
-                  slidesPerView: 4,
-                  spaceBetween: 30
+                    centeredSlides: false,
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                   centeredSlides: false
                 },
                 1100: {
                   slidesPerView: 5,
@@ -77,7 +156,24 @@
               }
         });
 
+        var instagramSwiper = new Swiper('.instagram-swiper', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 10,
+            pagination: {
+                el: '.instagram-swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        if ($(document).scrollTop() >= 50) {
+            $('header').fadeIn();
+          } else {
+            $('header').fadeOut();
+          }
+
     });
+
 
     $(window).on('resize', function () {
         fadeIn();
@@ -85,6 +181,12 @@
 
     $(window).on('scroll', function () {
         fadeIn();
+
+         if ($(document).scrollTop() >= 50) {
+            $('header').fadeIn();
+          } else {
+            $('header').fadeOut();
+          }
     });
 
     $(window).on('load', function () {});
@@ -107,7 +209,7 @@
                             // enable looping
                             loop: false,
                             // sets the minimum display time for each text before it is replaced
-                            minDisplayTime: 500,
+                            minDisplayTime: 1500,
                             // sets the initial delay before starting the animation
                             // (note that depending on the in effect you may need to manually apply
                             // visibility: hidden to the element before running this plugin)
@@ -159,5 +261,16 @@
             }
         });
     }
+
+    $('.loader').addClass('loaded');
+    $('.loader .loader-logo').addClass('active');
+
+    $(window).on('load', function(){
+    setTimeout(function(){
+        jQuery('.loader .loader-logo').addClass('clear-active');
+        jQuery('.loader').addClass('clear-loader');
+        jQuery('.loader').css('opacity',0);
+    }, 1000);
+});
 
 }(jQuery));
